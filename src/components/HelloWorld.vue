@@ -1,59 +1,90 @@
 <template>
-  <div class="hello">
-    <h1>{{ msg }}</h1>
-    <p>
-      For a guide and recipes on how to configure / customize this project,<br>
-      check out the
-      <a href="https://cli.vuejs.org" target="_blank" rel="noopener">vue-cli documentation</a>.
-    </p>
-    <h3>Installed CLI Plugins</h3>
-    <ul>
-      <li><a href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-babel" target="_blank" rel="noopener">babel</a></li>
-      <li><a href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-vuex" target="_blank" rel="noopener">vuex</a></li>
-      <li><a href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-eslint" target="_blank" rel="noopener">eslint</a></li>
-    </ul>
-    <h3>Essential Links</h3>
-    <ul>
-      <li><a href="https://vuejs.org" target="_blank" rel="noopener">Core Docs</a></li>
-      <li><a href="https://forum.vuejs.org" target="_blank" rel="noopener">Forum</a></li>
-      <li><a href="https://chat.vuejs.org" target="_blank" rel="noopener">Community Chat</a></li>
-      <li><a href="https://twitter.com/vuejs" target="_blank" rel="noopener">Twitter</a></li>
-      <li><a href="https://news.vuejs.org" target="_blank" rel="noopener">News</a></li>
-    </ul>
-    <h3>Ecosystem</h3>
-    <ul>
-      <li><a href="https://router.vuejs.org" target="_blank" rel="noopener">vue-router</a></li>
-      <li><a href="https://vuex.vuejs.org" target="_blank" rel="noopener">vuex</a></li>
-      <li><a href="https://github.com/vuejs/vue-devtools#vue-devtools" target="_blank" rel="noopener">vue-devtools</a></li>
-      <li><a href="https://vue-loader.vuejs.org" target="_blank" rel="noopener">vue-loader</a></li>
-      <li><a href="https://github.com/vuejs/awesome-vue" target="_blank" rel="noopener">awesome-vue</a></li>
-    </ul>
+  <div class="pa-2 px-sm-8 py-sm-4 ">
+    <v-card max-width="750" elevation="10">
+      <v-card-title class="pb-2">
+        <v-icon
+                color="blue"
+                small
+                left
+        >
+          mdi-star-four-points-outline
+        </v-icon>
+        <span class="blue--text caption font-weight-light">Questions for you</span>
+      </v-card-title>
+      <v-list three-line class="pt-0 pb-3">
+
+        <v-list-item class="py-0" style="min-height: 64px" >
+          <v-list-item-content class="py-2">
+            <v-list-item-title class="body-2 font-weight-thin mb-2">Who many similar questions are shown normally?</v-list-item-title>
+            <div class="d-flex align-content-space-between">
+              <v-list-item-subtitle><span class="font-weight-bold caption pink--text">CMS</span> <span class="caption">bl alb al bla </span>
+              </v-list-item-subtitle>
+              <v-list-item-action class="ma-0 me-6 me-sm-2">
+                <v-btn text small color="blue">Answer</v-btn>
+              </v-list-item-action>
+            </div>
+          </v-list-item-content>
+
+        </v-list-item>
+        <v-list-item class="py-0"  style="min-height: 64px">
+          <v-list-item-content class="py-2">
+            <v-list-item-title class="body-2 font-weight-thin mb-2">Who is an expert in landscape photography?</v-list-item-title>
+            <div class="d-flex align-content-space-between">
+              <v-list-item-subtitle><span class="font-weight-bold caption teal--text">Art</span> <span class="caption">bl alb al bla </span>
+              </v-list-item-subtitle>
+              <v-list-item-action class="ma-0 me-6 me-sm-2">
+                <v-btn text small color="blue">Answer</v-btn>
+              </v-list-item-action>
+            </div>
+          </v-list-item-content>
+        </v-list-item>
+      </v-list>
+    </v-card>
+
+    <v-card class="mt-2 mt-sm-4" max-width="750" elevation="10">
+      <v-card-title class="pb-2">
+        <v-icon
+                color="blue"
+                small
+                left
+        >
+          mdi-flash
+        </v-icon>
+        <span class="blue--text caption font-weight-light">Subscribe to content</span>
+      </v-card-title>
+      <v-card-text>
+        <div class="d-flex flex-column">
+          <span class="caption font-weight-light">Top popular tags</span>
+          <v-chip-group
+                  multiple
+                  column
+          >
+            <v-chip v-for="tag in tags" outlined :key="tag">
+              {{ tag }}
+            </v-chip>
+          </v-chip-group>
+        </div>
+      </v-card-text>
+    </v-card>
   </div>
 </template>
 
 <script>
-export default {
-  name: 'HelloWorld',
-  props: {
-    msg: String
-  }
-}
-</script>
+    export default {
+        name: 'HelloWorld',
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped lang="scss">
-h3 {
-  margin: 40px 0 0;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
-}
-</style>
+        data: () => ({
+            tags: [
+                'Work',
+                'Home Improvement',
+                'Vacation',
+                'Food',
+                'Drawers',
+                'Shopping',
+                'Art',
+                'Tech',
+                'Creative Writing',
+            ]
+        }),
+    }
+</script>
